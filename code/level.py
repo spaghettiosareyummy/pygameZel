@@ -77,6 +77,6 @@ class YSortCameraGroup(pygame.sprite.Group):
         floor_offset_pos = self.floor_rect.topleft - self.offset
         self.display_surface.blit(self.floor_surf,floor_offset_pos)
 
-        for sprite in sorted(self.sprites(),key = lambda sprite: sprite.rect.centery):
+        for sprite in sorted(self.sprites(),key = lambda sprite: pygame.display.Info().current_h):
             offset_pos = sprite.rect.topleft - self.offset
             self.display_surface.blit(sprite.image,offset_pos)
